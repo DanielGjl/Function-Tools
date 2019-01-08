@@ -11,3 +11,20 @@
       down:function (index) {
           this.swapItems(arr, index, index + 1);
       },
+      
+      
+     //新增url获取参数function
+     var GetUrlPara = function(paraName){
+        var url = window.location.search.toString();
+        var arrObj = url.split("?");
+           if (arrObj.length > 1) {
+           var arrPara = arrObj[1].split("&");
+           var arr;
+           for (var i = 0; i < arrPara.length; i++) {
+             arr = arrPara[i].split("=");
+             if (arr != null && arr[0] == paraName) {
+               return arr[1];
+             }
+           }
+         }
+     }
