@@ -28,3 +28,8 @@
            }
          }
      }
+     
+     //去除字符串所有的空格
+     removeAllSpace:function(str){
+          return str.replace(/\s+/g, "");
+     }
