@@ -33,3 +33,25 @@
      removeAllSpace:function(str){
           return str.replace(/\s+/g, "");
      }
+     
+     
+     //深拷贝
+      deepCopy (o, c) {
+        c = c || {}
+        for (let i in o) {
+          if (typeof o[i] === 'object') {
+            // 需要深拷贝
+            if (o[i].constructor === Array) {
+              // 数组
+              c[i] = []
+            } else {
+              // 对象
+              c[i] = {}
+            }
+            this.deepCopy(o[i], c[i])
+          } else {
+            c[i] = o[i]
+          }
+        }
+        return c
+      }
